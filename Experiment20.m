@@ -5,7 +5,7 @@ addpath(genpath('ToolboxForSimulator'));
 % importfolder   = 'ToolboxForSimulator/condition';
 % importfilename = 'Result_Data.xlsx'; % 条件のファイル
 % Data           = dataimport(importfolder,importfilename,[]);
-% SS400_data     = readtable('SS400_data.xlsx');
+boiling_data     = readtable('boiling_data.xlsx');
 % FC250_data     = readtable('FC250_data.xlsx');
 % A7075_data     = readtable('A7075_data.xlsx');
 % ADD_data       = readtable('ADD_data.xlsx');
@@ -35,21 +35,12 @@ addpath(genpath('ToolboxForSimulator'));
 % title('白金の体積抵抗率の温度依存性');
 % legend('データ点', '近似曲線', '指定温度での値');
 % grid on;
-% 音声ファイルの読み込み
 
-[y, Fs] = audioread('MAH00566.wav');  % 音声データの読み込み
+% 課題1
+figure; loglog(boiling_data.delta_Tsat0, boiling_data.q0)
+figure; loglog(boiling_data.delta_Tsat30, boiling_data.q30)
 
-% 片チャネルを使用（ステレオの場合）
-if size(y,2) > 1
-    y = y(:,1);
-end
-
-% Welch法でPSDを計算
-[pxx, f] = pwelch(y, [], [], [], Fs);
-
-% グラフ表示
-plot(f, 10*log10(pxx));  % dBスケールで表示
-xlabel('Frequency [Hz]');
-ylabel('Power/Frequency [dB/Hz]');
-title('Power Spectral Density');
-grid on;
+% 課題4
+FileName1 = 'MAH00565.wav'; TitleName1 = '沸騰音';
+FileName2 = 'MAH00566.wav'; TitleName2 = '環境音';
+plot_Task4(FileName1, TitleName1, FileName2, TitleName2)
