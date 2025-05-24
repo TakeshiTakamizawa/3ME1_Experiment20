@@ -8,6 +8,7 @@ loglog(f1(valid1), P1(valid1)); hold on;
 loglog(f2(valid2), P2(valid2)); hold off;
 xlabel('Frequency [Hz]'); ylabel('PSD [m²/Hz]');
 legend('Boiling sound', 'Ambient sound')
+set(gca, 'TickLength', [0.03 0.03], 'XMinorTick', 'on', 'YMinorTick', 'on');
 function [f, P1] = plot_PSD(FileName, TitleName)
 [signal, Fs] = audioread(FileName);  % 音声ファイル読み込み
 if size(signal,2) == 2
@@ -33,5 +34,6 @@ loglog(f(valid), P1(valid))
 xlabel('Frequency [Hz]')
 ylabel('PSD [m²/Hz]')
 title(TitleName)
+set(gca, 'TickLength', [0.03 0.03], 'XMinorTick', 'on', 'YMinorTick', 'on');
 end
 end

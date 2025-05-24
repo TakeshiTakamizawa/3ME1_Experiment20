@@ -36,11 +36,16 @@ boiling_data     = readtable('boiling_data.xlsx');
 % legend('データ点', '近似曲線', '指定温度での値');
 % grid on;
 
-% 課題1
-figure; loglog(boiling_data.delta_Tsat0, boiling_data.q0)
-figure; loglog(boiling_data.delta_Tsat30, boiling_data.q30)
+% 標準課題1
+plot_Task1(boiling_data)
 
-% 課題4
+% 標準課題2
+
+
+% 標準課題3
+
+
+% 標準課題4
 FileName1 = 'MAH00565.wav'; TitleName1 = '沸騰音';
 FileName2 = 'MAH00566.wav'; TitleName2 = '環境音';
 plot_Task4(FileName1, TitleName1, FileName2, TitleName2)
