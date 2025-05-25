@@ -19,5 +19,5 @@ loglog(delta_Tsat30(1:2,1),h30(1:2,1),'^', 'LineWidth', 5, 'MarkerSize', 8, 'Col
 legend('Nuclear boiling zone $\Delta T_{\mathrm{sub}}$=0 [K]', 'Nuclear boiling zone $\Delta T_{\mathrm{sub}}$=30 [K]', 'Natural convection region $\Delta T_{\mathrm{sub}}$=0 [K]', 'Natural convection region $\Delta T_{\mathrm{sub}}$=30 [K]', 'Interpreter', 'latex')
 set(gca, 'TickLength', [0.03 0.03], 'XMinorTick', 'on', 'YMinorTick', 'on');
 xlabel('wall superheat $\Delta T_{\mathrm{sat}}$ [K]', 'Interpreter', 'latex');
-ylabel('heat flux $q_{\mathrm{w}}$ [MW/m$^2$]', 'Interpreter', 'latex');
+ylabel('heat transfer coefficient $h$ [MW/m$^2$K]', 'Interpreter', 'latex');
 end
