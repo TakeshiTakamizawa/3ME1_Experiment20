@@ -8,7 +8,7 @@ b = p(1);
 a = 10^p(2);
 disp('【標準課題3】')
 fprintf('Data for degree of subcooling %.f K', T); disp(' ')
-fprintf('傾き： %.3f ，べき乗： %.3f', a, b); disp(' ')
+fprintf('傾き： %.10f ，べき乗： %.10f', a, b); disp(' ')
 x_fit = linspace(min(x)-1, max(x)+3, 100);
 y_fit = a * x_fit.^b;
 figure
